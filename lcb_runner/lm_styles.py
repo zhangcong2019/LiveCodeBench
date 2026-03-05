@@ -33,6 +33,8 @@ class LMStyle(Enum):
     DeepSeekR1 = "DeepSeekR1"
 
     TogetherAI = "TogetherAI"
+    
+    LocalAPI = "LocalAPI"  # 本地 Python API
 
 
 @dataclass
@@ -860,6 +862,14 @@ LanguageModelList: list[LanguageModel] = [
         LMStyle.DeepSeekR1,
         datetime(2024, 4, 1),
         "https://huggingface.co/agentica-org/DeepCoder-14B-Preview",
+    ),
+    
+    # 本地 Python API
+    LanguageModel(
+        "local/local-api",
+        "Local-API",
+        LMStyle.LocalAPI,
+        datetime(2024, 1, 1),
     ),
 ]
 
