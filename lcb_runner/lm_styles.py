@@ -33,7 +33,7 @@ class LMStyle(Enum):
     DeepSeekR1 = "DeepSeekR1"
 
     TogetherAI = "TogetherAI"
-    
+    OVGenAI = "OVGenAI"
     LocalAPI = "LocalAPI"  # 本地 Python API
 
 
@@ -870,6 +870,29 @@ LanguageModelList: list[LanguageModel] = [
         "Local-API",
         LMStyle.LocalAPI,
         datetime(2024, 1, 1),
+    ),
+
+
+    LanguageModel(
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        LMStyle.OpenAIChat,
+        datetime(2026, 3, 10),
+        link="",
+    ),
+    LanguageModel(
+        "Qwen/Qwen2.5-7B-Instruct",
+        "Qwen/Qwen2.5-7B-Instruct",
+        LMStyle.OpenAIChat,
+        datetime(2026, 3, 10),
+        link="",
+    ),
+    LanguageModel(
+        "Qwen2.5-7B-Instruct-ovgenai",
+        "Qwen2.5-7B-Instruct-ovgenai",
+        LMStyle.OVGenAI,
+        datetime(2026, 3, 10),
+        link="",
     ),
 ]
 

@@ -167,14 +167,18 @@ def main():
                 metadatas = metrics[2]
             else:
                 metadatas = [[] for _ in benchmark]
-            save_eval_results = [
-                instance.insert_output_evaluation(
-                    outputs_list, extracted_list, graded_list, metadata=meta
+            save_eval_results = []
+            for instance, (outputs_list, extracted_list), graded_list, meta in zip(
+                benchmark, combined_results, graded, metadatas
+            ):
+                save_eval_results.append(
+                    instance.insert_output_evaluation(
+                        outputs_list, extracted_list, graded_list, metadata=meta
+                    )
                 )
-                for instance, (outputs_list, extracted_list), graded_list, meta in zip(
-                    benchmark, combined_results, graded, metadatas
-                )
-            ]
+                with open(eval_file, "w") as f:
+                    json.dump(metrics, f, indent=4)
+
             if metrics and old_eval_results:
                 old_eval_results
                 metrics[2] = old_eval_results[2] + metrics[2]

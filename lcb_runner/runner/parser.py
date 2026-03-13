@@ -87,7 +87,7 @@ def get_args():
     parser.add_argument(
         "--num_process_evaluate",
         type=int,
-        default=12,
+        default=1,
         help="Number of processes to use for evaluation",
     )
     parser.add_argument("--timeout", type=int, default=6, help="Timeout for evaluation")

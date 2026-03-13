@@ -1,6 +1,9 @@
 import os
 from time import sleep
 
+import openai
+from openai import OpenAI
+
 try:
     import openai
     from openai import OpenAI
@@ -13,7 +16,8 @@ from lcb_runner.runner.base_runner import BaseRunner
 
 class OpenAIRunner(BaseRunner):
     client = OpenAI(
-        api_key=os.getenv("OPENAI_KEY"),
+        base_url = "http://10.67.117.30:8000/v1",
+        api_key= "api_key",
     )
 
     def __init__(self, args, model):

@@ -3,10 +3,10 @@ from lcb_runner.lm_styles import LMStyle, LanguageModel
 
 def build_runner(args, model: LanguageModel):
     # 本地 Python API Runner
-    if model.model_style == LMStyle.LocalAPI:
-        from lcb_runner.runner.local_api_runner import LocalAPIRunner
+    if model.model_style == LMStyle.OVGenAI:
+        from lcb_runner.runner.ovgenai_runner import OVGenAIRunner
 
-        return LocalAPIRunner(args, model)
+        return OVGenAIRunner(args, model)
     
     if model.model_style == LMStyle.OpenAIChat:
         from lcb_runner.runner.oai_runner import OpenAIRunner

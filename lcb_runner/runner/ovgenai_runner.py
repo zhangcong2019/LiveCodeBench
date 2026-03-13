@@ -1,7 +1,7 @@
 from lcb_runner.runner.base_runner import BaseRunner
 
 
-class LocalAPIRunner(BaseRunner):
+class OVGenAIRunner(BaseRunner):
     """
     本地 Python API Runner
     
@@ -18,7 +18,7 @@ class LocalAPIRunner(BaseRunner):
         #   - 设置 API 地址和密钥
         # ========================================
         
-        # raise NotImplementedError("LocalAPIRunner 尚未实现，请手动补充!")
+        # raise NotImplementedError("OVGenAIRunner 尚未实现，请手动补充!")
     
     def _run_single(self, prompt: str | list[dict[str, str]]) -> list[str]:
         """
@@ -49,7 +49,7 @@ class LocalAPIRunner(BaseRunner):
         # return results
         # ========================================
         
-        raise NotImplementedError("LocalAPIRunner._run_single() 尚未实现，请手动补充!")
+        raise NotImplementedError("OVGenAIRunner._run_single() 尚未实现，请手动补充!")
         
         # # 这里是占位符，返回空字符串
         # return ["" for _ in range(self.args.n)]
